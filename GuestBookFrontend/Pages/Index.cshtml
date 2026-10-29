@@ -1,0 +1,18 @@
+﻿@page
+@model IndexModel
+
+<h1>Min Gästbok</h1>
+
+<form method="post">
+    <input type="text" asp-for="NewMessageText" placeholder="Would you please write a message..." required />
+    <button type="submit">Skicka</button>
+</form>
+
+<hr />
+
+<ul>
+    @foreach (var msg in Model.Messages)
+    {
+        <li>@msg.Text</li>
+    }
+</ul>
